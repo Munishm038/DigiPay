@@ -108,6 +108,8 @@ class OtpScreen extends Component {
       <View style={styles.otpFieldsContainerStyle}>
         <View style={styles.textFieldContainerStyle}>
           <TextInput
+            placeholder="_"
+            placeholderTextColor="grey"
             style={{...Fonts.blackColor16Bold}}
             onChangeText={() => {
               this.secondTextInput.focus();
@@ -118,6 +120,8 @@ class OtpScreen extends Component {
 
         <View style={styles.textFieldContainerStyle}>
           <TextInput
+            placeholder="_"
+            placeholderTextColor="grey"
             style={{...Fonts.blackColor16Bold}}
             ref={input => {
               this.secondTextInput = input;
@@ -131,23 +135,55 @@ class OtpScreen extends Component {
 
         <View style={styles.textFieldContainerStyle}>
           <TextInput
+            placeholder="_"
+            placeholderTextColor="grey"
             style={{...Fonts.blackColor16Bold}}
             keyboardType="numeric"
             ref={input => {
               this.thirdTextInput = input;
             }}
             onChangeText={() => {
-              this.forthTextInput.focus();
+              this.fourthTextInput.focus();
+            }}
+          />
+        </View>
+        <View style={styles.textFieldContainerStyle}>
+          <TextInput
+            placeholder="_"
+            placeholderTextColor="grey"
+            style={{...Fonts.blackColor16Bold}}
+            keyboardType="numeric"
+            ref={input => {
+              this.fourthTextInput = input;
+            }}
+            onChangeText={() => {
+              this.fifthTextInput.focus();
+            }}
+          />
+        </View>
+        <View style={styles.textFieldContainerStyle}>
+          <TextInput
+            placeholder="_"
+            placeholderTextColor="grey"
+            style={{...Fonts.blackColor16Bold}}
+            keyboardType="numeric"
+            ref={input => {
+              this.fifthTextInput = input;
+            }}
+            onChangeText={() => {
+              this.sixthTextInput.focus();
             }}
           />
         </View>
 
         <View style={styles.textFieldContainerStyle}>
           <TextInput
+            placeholder="_"
+            placeholderTextColor="grey"
             style={{...Fonts.blackColor16Bold}}
             keyboardType="numeric"
             ref={input => {
-              this.forthTextInput = input;
+              this.sixthTextInput = input;
             }}
             onChangeText={() => {
               this.setState({isLoading: true});
@@ -229,8 +265,10 @@ const styles = StyleSheet.create({
     marginHorizontal: Sizes.fixPadding * 2.0,
   },
   textFieldContainerStyle: {
-    height: 60.0,
-    width: 60.0,
+    height: 55.0,
+    // width: 60.0,
+    flex: 1,
+    marginHorizontal: 5,
     elevation: 3.0,
     paddingLeft: Sizes.fixPadding,
     borderRadius: Sizes.fixPadding,

@@ -81,9 +81,9 @@ class CardsScreen extends Component {
                 <View style={{ flex: 1 }}>
                     {this.header()}
                     {this.userCardInfo()}
-                    {this.setLimitAndLockCardInfo()}
+                    {/* {this.setLimitAndLockCardInfo()}
                     {this.transactionTitle()}
-                    {this.transactions()}
+                    {this.transactions()} */}
                 </View>
                 {this.setLimitDialogInfo()}
             </SafeAreaView>
@@ -302,7 +302,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     userCardContentStyle: {
-        height: 198.0,
+        height: 170.0,
         backgroundColor: Colors.primaryColor,
         borderRadius: Sizes.fixPadding - 3.0,
         marginHorizontal: Sizes.fixPadding * 2.0,

@@ -26,16 +26,20 @@ class AccountScreen extends Component {
         {this.header()}
         <ScrollView showsVerticalScrollIndicator={false}>
           {this.userInfo()}
-          {this.settingInfo({title: 'Change mPin & thumb impression'})}
-          <TouchableOpacity
-            activeOpacity={0.9}
-            onPress={() => this.props.navigation.navigate('NearByBanks')}>
-            {this.settingInfo({title: 'Nearby Banks'})}
+          <TouchableOpacity>
+            {this.settingInfo({title: 'Change Password'})}
+          </TouchableOpacity>
+          <TouchableOpacity>
+            {this.settingInfo({title: 'Bank Account Details'})}
           </TouchableOpacity>
           <TouchableOpacity
-            activeOpacity={0.9}
-            onPress={() => this.props.navigation.navigate('NearByAtms')}>
-            {this.settingInfo({title: 'Nearby ATMs'})}
+            onPress={() => {
+              this.props.navigation.navigate('Cards');
+            }}>
+            {this.settingInfo({title: 'Virtual Card Details'})}
+          </TouchableOpacity>
+          <TouchableOpacity>
+            {this.settingInfo({title: 'Nearby Merchant'})}
           </TouchableOpacity>
           {this.title({title: 'ABOUT'})}
           <TouchableOpacity
@@ -119,12 +123,13 @@ class AccountScreen extends Component {
 
   settingInfo({title}) {
     return (
-      <View style={{marginHorizontal: Sizes.fixPadding * 2.0}}>
+      <View style={{marginHorizontal: 10}}>
         <View
           style={{
             flexDirection: 'row',
             alignItems: 'center',
             justifyContent: 'space-between',
+            paddingTop: 10,
           }}>
           <View style={{width: width / 1.5}}>
             <Text numberOfLines={1} style={{...Fonts.blackColor14Medium}}>

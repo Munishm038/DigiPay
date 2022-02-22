@@ -15,6 +15,9 @@ import {Colors, Fonts, Sizes} from '../../constant/styles';
 import * as Animatable from 'react-native-animatable';
 import {BarChart} from 'react-native-chart-kit';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import FontAwesome5Icons from 'react-native-vector-icons/FontAwesome5';
+import FontAwesomeIcons from 'react-native-vector-icons/FontAwesome';
 
 const data = {
   labels: ['Mn', 'Te', 'Wd', 'Tu', 'Fr', 'St', 'Sn'],
@@ -67,32 +70,77 @@ class BankingScreen extends Component {
           {this.transactionAndTransferInfo()}
           <TouchableOpacity
             activeOpacity={0.9}
-            onPress={() => this.props.navigation.navigate('Loan')}>
+            onPress={() =>
+              this.props.navigation.navigate('Transaction')
+            }>
             {this.functionality({
-              title: 'Loans',
-              icon: require('../../assets/images/functionalities/loan.png'),
+              title: 'Transaction History',
+              icon: (
+                <MaterialCommunityIcons
+                  color={Colors.whiteColor}
+                  size={25}
+                  name="history"
+                />
+              ),
             })}
           </TouchableOpacity>
           <TouchableOpacity
             activeOpacity={0.9}
-            onPress={() => this.props.navigation.navigate('Deposite')}>
+            onPress={() => this.props.navigation.navigate('Loan')}>
             {this.functionality({
-              title: 'Deposite',
-              icon: require('../../assets/images/functionalities/deposite.png'),
+              title: 'Loans',
+              icon: (
+                <FontAwesome5Icons
+                  color={Colors.whiteColor}
+                  size={20}
+                  name="hand-holding-usd"
+                />
+              ),
             })}
           </TouchableOpacity>
           <TouchableOpacity
             activeOpacity={0.9}
             onPress={() => this.props.navigation.navigate('Cards')}>
             {this.functionality({
-              title: 'Cards',
-              icon: require('../../assets/images/functionalities/cards.png'),
+              title: 'Virtual Debit Card',
+              icon: (
+                <FontAwesome5Icons
+                  color={Colors.whiteColor}
+                  size={20}
+                  name="credit-card"
+                />
+              ),
             })}
           </TouchableOpacity>
-          {this.functionality({
-            title: 'All Services',
-            icon: require('../../assets/images/functionalities/more.png'),
-          })}
+          <TouchableOpacity
+            activeOpacity={0.9}
+            onPress={() => this.props.navigation.navigate('Loan')}>
+            {this.functionality({
+              title: 'Pay your bills',
+              icon: (
+                <MaterialIcons
+                  color={Colors.whiteColor}
+                  size={20}
+                  name="payments"
+                />
+              ),
+            })}
+          </TouchableOpacity>
+          <TouchableOpacity
+            activeOpacity={0.9}
+            onPress={() => this.props.navigation.navigate('Loan')}>
+            {this.functionality({
+              title: 'Link your bank account',
+              icon: (
+                <FontAwesomeIcons
+                  color={Colors.whiteColor}
+                  size={20}
+                  name="bank"
+                />
+              ),
+            })}
+          </TouchableOpacity>
+
           {/* {this.businessLoanInfo()}
           {this.educationLoanInfo()} */}
         </ScrollView>
@@ -141,13 +189,7 @@ class BankingScreen extends Component {
   functionality({title, icon}) {
     return (
       <View style={styles.functionalityContentStyle}>
-        <View style={styles.functionalityIconContentStyle}>
-          <Image
-            source={icon}
-            style={{width: 30.0, height: 30.0}}
-            resizeMode="cover"
-          />
-        </View>
+        <View style={styles.functionalityIconContentStyle}>{icon}</View>
         <Text style={{...Fonts.blackColor16Bold}}>{title}</Text>
       </View>
     );
@@ -204,32 +246,30 @@ class BankingScreen extends Component {
       <View style={styles.transactionAndTransferMainContentStyle}>
         <TouchableOpacity
           activeOpacity={0.9}
-          onPress={() => this.props.navigation.navigate('Transaction')}
+          onPress={() => this.props.navigation.navigate('FundTransfer')}
           style={{
             ...styles.transactionAndTransferContentStyle,
-            marginRight: Sizes.fixPadding * 2.0,
           }}>
-          <Text style={{...Fonts.blackColor14Medium}}>Send Money</Text>
-          <View style={styles.transactionAndTransferGoStyle}>
-            <MaterialCommunityIcons
-              name="arrow-right"
-              size={15}
-              color={Colors.blackColor}
-            />
-          </View>
+          <MaterialCommunityIcons
+            name="bank-transfer-out"
+            size={40}
+            color={Colors.whiteColor}
+          />
+          <Text style={{...Fonts.whiteColor14Medium}}>Send Money</Text>
         </TouchableOpacity>
+        <View style={{width: 10}}></View>
         <TouchableOpacity
           activeOpacity={0.9}
           onPress={() => this.props.navigation.navigate('FundTransfer')}
-          style={styles.transactionAndTransferContentStyle}>
-          <Text style={{...Fonts.blackColor14Medium}}>Recieve Money</Text>
-          <View style={styles.transactionAndTransferGoStyle}>
-            <MaterialCommunityIcons
-              name="arrow-right"
-              size={15}
-              color={Colors.blackColor}
-            />
-          </View>
+          style={{
+            ...styles.transactionAndTransferContentStyle,
+          }}>
+          <MaterialCommunityIcons
+            name="bank-transfer-in"
+            size={40}
+            color={Colors.whiteColor}
+          />
+          <Text style={{...Fonts.whiteColor14Medium}}>Recieve Money</Text>
         </TouchableOpacity>
       </View>
     );
@@ -300,12 +340,11 @@ const styles = StyleSheet.create({
   },
   transactionAndTransferContentStyle: {
     flex: 0.45,
-    backgroundColor: Colors.whiteColor,
+    backgroundColor: Colors.primaryColor,
     elevation: 2.0,
-    borderRadius: Sizes.fixPadding,
-    height: 89.0,
+    borderRadius: 10,
     paddingHorizontal: Sizes.fixPadding + 10.0,
-    paddingVertical: Sizes.fixPadding * 2.0,
+    paddingVertical: 10,
     justifyContent: 'space-between',
   },
   transactionAndTransferGoStyle: {
@@ -332,7 +371,7 @@ const styles = StyleSheet.create({
     width: 50.0,
     height: 50.0,
     borderRadius: 25.0,
-    backgroundColor: Colors.whiteColor,
+    backgroundColor: Colors.primaryColor,
     elevation: 2.0,
     alignItems: 'center',
     justifyContent: 'center',
