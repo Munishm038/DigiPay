@@ -260,7 +260,7 @@ class BankingScreen extends Component {
         <View style={{width: 10}}></View>
         <TouchableOpacity
           activeOpacity={0.9}
-          onPress={() => this.props.navigation.navigate('FundTransfer')}
+          onPress={() => this.props.navigation.navigate('RecieveMoney')}
           style={{
             ...styles.transactionAndTransferContentStyle,
           }}>

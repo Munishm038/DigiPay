@@ -27,6 +27,7 @@ import registerScreen from './screens/auth/registerScreen';
 import otpScreen from './screens/auth/otpScreen';
 import splashScreen from './screens/splashScreen';
 import aadharScreen from './screens/auth/aadharScreen';
+import RecieveMoneyScreen from './screens/RecieveMoney/RecieveMoneyScreen';
 
 const switchNavigator = createStackNavigator(
   {
@@ -38,6 +39,7 @@ const switchNavigator = createStackNavigator(
     BottomTabBar: bottomTabBarScreen,
     Transaction: transactionScreen,
     FundTransfer: fundTransferScreen,
+    RecieveMoney: RecieveMoneyScreen,
     OneTimeTrasfer: oneTimeTransferScreen,
     OneTimeTransferWithAccount: oneTimeTrasferWithAccountScreen,
     TransferSuccessfull: transferSuccessfullScreen,

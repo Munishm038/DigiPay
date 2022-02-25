@@ -110,14 +110,14 @@ class LoanScreen extends Component {
             {this.card({
               loanType: 'Home Loan',
               accountNumber: '1356 8795 7857 9856',
-              dueAmount: '69,000.00',
-              emiAmount: '912.00',
+              dueAmount: '69,000,00.00',
+              emiAmount: '25,000.00',
             })}
             {this.card({
               loanType: 'Car Loan',
               accountNumber: '1658 9875 1245 9534',
-              dueAmount: '25000.00',
-              emiAmount: '345.00',
+              dueAmount: '4,500,00.00',
+              emiAmount: '12,000',
             })}
             {this.availableOffersText()}
             {this.businessLoanInfo()}

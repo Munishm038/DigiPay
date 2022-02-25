@@ -260,7 +260,7 @@ class CardsScreen extends Component {
                         <View>
                             <Text style={{ ...Fonts.whiteColor12Medium }}>Card holder</Text>
                             <Text style={{ ...Fonts.whiteColor14Medium, marginTop: Sizes.fixPadding - 8.0 }}>
-                                Ellison Perry
+                                Munish Mehta
                             </Text>
                         </View>
                         <View style={{ alignItems: 'flex-end' }}>

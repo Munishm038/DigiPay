@@ -12,7 +12,7 @@ import {withNavigation} from 'react-navigation';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Colors, Fonts} from '../constant/styles';
-// import NotificationScreen from '../screens/notifications/notificationScreen';
+import NotificationScreen from '../screens/notifications/notificationScreen';
 import AccountScreen from '../screens/account/accountScreen';
 import BankingScreen from '../screens/banking/bankingScreen';
 
@@ -48,8 +48,8 @@ class BottomTabBarScreen extends Component {
           />
           {this.state.currentIndex == 1 ? (
             <BankingScreen />
-          // ) : this.state.currentIndex == 2 ? (
-          //   <NotificationScreen />
+          ) : this.state.currentIndex == 2 ? (
+            <NotificationScreen />
           ) : (
             <AccountScreen />
           )}
@@ -58,12 +58,12 @@ class BottomTabBarScreen extends Component {
               index: 1,
               title: 'Banking',
             })}
-            {/* {this.bottomTabBarItem({
-              index: 2,
-              title: 'Notifications',
-            })} */}
             {this.bottomTabBarItem({
               index: 2,
+              title: 'Notifications',
+            })}
+            {this.bottomTabBarItem({
+              index: 3,
               title: 'Account',
             })}
           </View>
@@ -88,16 +88,16 @@ class BottomTabBarScreen extends Component {
                 : Colors.grayColor
             }
           />
-        // ) : index == 2 ? (
-        //   <MaterialIcons
-        //     name="notifications"
-        //     size={24}
-        //     color={
-        //       index == this.state.currentIndex
-        //         ? Colors.primaryColor
-        //         : Colors.grayColor
-        //     }
-        //   />
+        ) : index == 2 ? (
+          <MaterialIcons
+            name="notifications"
+            size={24}
+            color={
+              index == this.state.currentIndex
+                ? Colors.primaryColor
+                : Colors.grayColor
+            }
+          />
         ) : (
           <MaterialIcons
             name="person"
@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
     height: 50.0,
     backgroundColor: Colors.whiteColor,
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     alignItems: 'center',
     paddingHorizontal: 30.0,
     borderTopColor: 'rgba(128, 128, 128, 0.2)',

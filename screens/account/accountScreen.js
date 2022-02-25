@@ -157,14 +157,14 @@ class AccountScreen extends Component {
       <View style={styles.userInfoContentStyle}>
         <View style={{flexDirection: 'row', alignItems: 'center'}}>
           <Image
-            source={require('../../assets/images/user/user_9.jpg')}
+            source={require('../../assets/images/user/user_1.jpg')}
             style={{width: 70.0, height: 70.0, borderRadius: 35.0}}
           />
           <View style={{width: width / 2.0}}>
             <Text
               numberOfLines={1}
               style={{...Fonts.blackColor16Bold, marginLeft: Sizes.fixPadding}}>
-              Ellison Perry
+              Munish Mehta
             </Text>
           </View>
         </View>
