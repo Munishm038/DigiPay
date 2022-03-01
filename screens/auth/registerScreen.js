@@ -14,7 +14,8 @@ import {
 } from 'react-native';
 import {withNavigation} from 'react-navigation';
 import {Colors, Fonts, Sizes} from '../../constant/styles';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+// import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import {Select, Center, Box, NativeBaseProvider} from 'native-base';
 
 class RegisterScreen extends Component {
   componentDidMount() {
@@ -41,25 +42,68 @@ class RegisterScreen extends Component {
     password: '',
     confirmpassword: '',
     mobileNumber: '',
+    choosenLanguage: '',
   };
 
   render() {
     return (
-      <SafeAreaView style={{flex: 1, backgroundColor: '#F2F4F6'}}>
-        <StatusBar backgroundColor={Colors.primaryColor} />
-        <View style={{flex: 1}}>
-          {this.imageWithAppTitle()}
-          <ScrollView showsVerticalScrollIndicator={false}>
-            {this.registerTitle()}
-            {this.fullNameTextField()}
-            {this.mobileNumberTextField()}
-            {this.passwordTextField()}
-            {this.confirmpasswordTextField()}
-            {this.continueButton()}
-            {this.alreadyRegisterText()}
-          </ScrollView>
-        </View>
-      </SafeAreaView>
+      <NativeBaseProvider>
+        <SafeAreaView style={{flex: 1, backgroundColor: '#F2F4F6'}}>
+          <StatusBar backgroundColor={Colors.primaryColor} />
+          <View style={{flex: 1}}>
+            {this.imageWithAppTitle()}
+            <ScrollView showsVerticalScrollIndicator={false}>
+              <View style={{marginHorizontal: 10}}>
+                <Center>
+                  <Box w="full">
+                    <Select
+                      selectedValue={this.state.choosenLanguage}
+                      minWidth="200"
+                      accessibilityLabel="Choose Language"
+                      placeholder="Choose Language"
+                      _selectedItem={{
+                        bg: 'gray.300',
+                        // endIcon: (
+                        //   <MaterialIcons name="keyboard-arrow-down" size={20} />
+                        // ),
+                      }}
+                      mt={1}
+                      onValueChange={itemValue =>
+                        this.setState({
+                          choosenLanguage: itemValue,
+                        })
+                      }>
+                      <Select.Item label="English" value="en" />
+                      <Select.Item label="Hindi" value="hi" />
+                      <Select.Item label="Punjabi" value="pun" />
+                      <Select.Item label="Bengali" value="bngl" />
+                      <Select.Item label="Marathi" value="mrt" />
+                      <Select.Item label="Gujrati" value="gjr" />
+                      <Select.Item label="Rajasthani" value="rjtn" />
+                      <Select.Item label="Bhojpuri" value="bhj" />
+                      <Select.Item label="Odia" value="odi" />
+                      <Select.Item label="Maithili" value="mai" />
+                      <Select.Item label="Sindhi" value="sin" />
+                      <Select.Item label="Nepali" value="nep" />
+                      <Select.Item label="Assamese" value="assa" />
+                      <Select.Item label="Chhattisgarhi" value="chhat" />
+                      <Select.Item label="Sinhala" value="sinh" />
+                      <Select.Item label="Romani" value="rom" />
+                    </Select>
+                  </Box>
+                </Center>
+              </View>
+              {this.registerTitle()}
+              {this.fullNameTextField()}
+              {this.mobileNumberTextField()}
+              {this.passwordTextField()}
+              {this.confirmpasswordTextField()}
+              {this.continueButton()}
+              {this.alreadyRegisterText()}
+            </ScrollView>
+          </View>
+        </SafeAreaView>
+      </NativeBaseProvider>
     );
   }
 

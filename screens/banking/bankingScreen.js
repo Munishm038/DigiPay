@@ -18,6 +18,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import FontAwesome5Icons from 'react-native-vector-icons/FontAwesome5';
 import FontAwesomeIcons from 'react-native-vector-icons/FontAwesome';
+import IonIcon from 'react-native-vector-icons/Ionicons';
 
 const data = {
   labels: ['Mn', 'Te', 'Wd', 'Tu', 'Fr', 'St', 'Sn'],
@@ -52,8 +53,17 @@ const cardsList = [
   },
   {
     id: '2',
-    accountType: 'Loan Amount',
-    amount: '15,098',
+    accountType: 'Two Wheeler Loan',
+    accountNumber: '1356 8795 7857 9856',
+    amount: '25,000.00',
+    emi: '3,500.00',
+  },
+  {
+    id: '3',
+    accountType: 'Personal Loan',
+    accountNumber: '1658 9875 1245 9534',
+    amount: '15,000.00',
+    emi: '2,500.00',
   },
 ];
 
@@ -70,9 +80,7 @@ class BankingScreen extends Component {
           {this.transactionAndTransferInfo()}
           <TouchableOpacity
             activeOpacity={0.9}
-            onPress={() =>
-              this.props.navigation.navigate('Transaction')
-            }>
+            onPress={() => this.props.navigation.navigate('Transaction')}>
             {this.functionality({
               title: 'Transaction History',
               icon: (
@@ -296,7 +304,21 @@ class BankingScreen extends Component {
                 </Text>
               )}
               <Text style={{...Fonts.whiteColor18Bold}}>INR {item.amount}</Text>
-              <Text style={{...Fonts.primaryColor14Regular}}>Statement</Text>
+              <TouchableOpacity
+                onPress={() => {
+                  if (item.id == 1) {
+                    this.props.navigation.navigate('Transaction');
+                  } else {
+                    this.props.navigation.navigate('LoanStatement', {
+                      loanType: item.accountType,
+                      accountNumber: item.accountNumber,
+                      dueAmount: item.amount,
+                      emiAmount: item.emi,
+                    });
+                  }
+                }}>
+                <Text style={{...Fonts.primaryColor14Regular}}>Statement</Text>
+              </TouchableOpacity>
             </View>
           </ImageBackground>
         </Animatable.View>
@@ -319,8 +341,19 @@ class BankingScreen extends Component {
 
   header() {
     return (
-      <View style={styles.headerContentStyle}>
+      <View
+        style={{
+          ...styles.headerContentStyle,
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          paddingHorizontal: 15,
+        }}>
+        <View></View>
         <Text style={{...Fonts.blackColor18Bold}}>Digi Pay</Text>
+        <TouchableOpacity>
+          <IonIcon name="volume-high" size={25} color="#000" />
+        </TouchableOpacity>
       </View>
     );
   }

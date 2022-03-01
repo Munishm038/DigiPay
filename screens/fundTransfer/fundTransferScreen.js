@@ -100,18 +100,39 @@ class FundTransferScreen extends Component {
           <View>
             <View
               style={{
-                backgroundColor: '#dadae5',
-                borderRadius: 5,
+                display: 'flex',
+                flexDirection: 'row',
                 margin: 5,
                 marginTop: 20,
-                paddingHorizontal: 10,
               }}>
-              <TextInput
-                keyboardType="numeric"
-                placeholder="Pay to Mobile Number"
-                placeholderTextColor="grey"
-                style={{color: 'grey'}}
-              />
+              <View
+                style={{
+                  backgroundColor: '#dadae5',
+                  borderRadius: 5,
+                  paddingHorizontal: 10,
+                  flex: 1,
+                }}>
+                <TextInput
+                  keyboardType="numeric"
+                  placeholder="Pay to Mobile Number"
+                  placeholderTextColor="grey"
+                  maxLength={10}
+                  style={{color: 'grey'}}
+                />
+              </View>
+              <TouchableOpacity
+                style={{
+                  marginLeft: 10,
+                  borderRadius: 5,
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}>
+                <AntDesignIcons
+                  name="contacts"
+                  size={35}
+                  color={Colors.primaryColor}
+                />
+              </TouchableOpacity>
             </View>
             <Text
               style={{
@@ -122,13 +143,15 @@ class FundTransferScreen extends Component {
               fontWeight="semibold">
               Recents
             </Text>
-            {this.recentTransactionComponent()}
-            {this.recentTransactionComponent()}
-            {this.recentTransactionComponent()}
-            {this.recentTransactionComponent()}
-            {this.recentTransactionComponent()}
-            {this.recentTransactionComponent()}
-            {this.recentTransactionComponent()}
+            {this.recentTransactionComponent('7015624643', 'Munish Kumar')}
+            {this.recentTransactionComponent('8989897089', 'Ajay Kumar')}
+            {this.recentTransactionComponent('8987897089', 'Vicky Kumar')}
+            {this.recentTransactionComponent('9089897089', 'Angad Gupta')}
+            {this.recentTransactionComponent('6789897089', 'Vinay Mishra')}
+            {this.recentTransactionComponent('9089897089', 'Aisha Mehra')}
+            {this.recentTransactionComponent('7867897089', 'Anupam')}
+            {this.recentTransactionComponent('9012897089', 'Anu')}
+            {this.recentTransactionComponent('9034889089', 'Vinay')}
             {/* {this.header()} */}
             {/* <TouchableOpacity
             activeOpacity={0.9}
@@ -146,7 +169,7 @@ class FundTransferScreen extends Component {
     );
   }
 
-  recentTransactionComponent() {
+  recentTransactionComponent(phone, name) {
     return (
       <View
         style={[
@@ -169,13 +192,13 @@ class FundTransferScreen extends Component {
             alignItems: 'center',
           }}>
           <Text color="#FFF" fontWeight="bold" fontSize="lg">
-            MK
+            {name.slice(0, 1)}
           </Text>
         </View>
         <View style={{paddingHorizontal: 20}}>
-          <Text fontWeight="semibold">Munish Kumar</Text>
+          <Text fontWeight="semibold">{name}</Text>
           <Text color="grey" fontSize="xs">
-            7015624643
+            {phone}
           </Text>
         </View>
       </View>

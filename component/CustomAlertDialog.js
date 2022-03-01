@@ -17,8 +17,7 @@ export const CustomAlertDialog = ({isOpen, setIsOpen}) => {
             <AlertDialog.CloseButton />
             <AlertDialog.Header>Success!</AlertDialog.Header>
             <AlertDialog.Body>
-              Loan Applied successfully, you will recieve notification when it
-              is approved
+              Your request has been Successfully Submitted, You will recieve notification on approval
             </AlertDialog.Body>
             <AlertDialog.Footer>
               <Button.Group space={2}>

@@ -13,7 +13,6 @@ import {withNavigation} from 'react-navigation';
 import {Colors, Fonts, Sizes} from '../../constant/styles';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import FeatherIcon from 'react-native-vector-icons/Feather';
-const {width} = Dimensions.get('screen');
 
 const transactionList = [
   {

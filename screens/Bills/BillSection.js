@@ -16,13 +16,13 @@ export function BillSectionScreen(props) {
       data: [
         {
           icon: (
-            <EntypoIcon name="mobile" size={20} color={Colors.primaryColor} />
+            <EntypoIcon name="mobile" size={30} color={Colors.primaryColor} />
           ),
           text: 'Mobile Recharge',
         },
         {
           icon: (
-            <IonIcon name="car-outline" size={20} color={Colors.primaryColor} />
+            <IonIcon name="car-outline" size={30} color={Colors.primaryColor} />
           ),
           text: 'FASTag Recharge',
         },
@@ -30,14 +30,14 @@ export function BillSectionScreen(props) {
           icon: (
             <FontAwesome5Icon
               name="satellite-dish"
-              size={20}
+              size={30}
               color={Colors.primaryColor}
             />
           ),
           text: 'DTH',
         },
         {
-          icon: <FeatherIcon name="tv" size={20} color={Colors.primaryColor} />,
+          icon: <FeatherIcon name="tv" size={30} color={Colors.primaryColor} />,
           text: 'Cable TV',
         },
       ],
@@ -47,13 +47,13 @@ export function BillSectionScreen(props) {
       data: [
         {
           icon: (
-            <MaterialCommunityIcon name="gas-cylinder" size={20} color={Colors.primaryColor} />
+            <MaterialCommunityIcon name="gas-cylinder" size={30} color={Colors.primaryColor} />
           ),
           text: 'Book A Cylinder',
         },
         {
           icon: (
-            <MaterialCommunityIcon name="pipe-valve" size={20} color={Colors.primaryColor} />
+            <MaterialCommunityIcon name="pipe-valve" size={30} color={Colors.primaryColor} />
           ),
           text: 'Piped Gas',
         },
@@ -61,30 +61,30 @@ export function BillSectionScreen(props) {
           icon: (
             <IonIcon
               name="water"
-              size={20}
+              size={30}
               color={Colors.primaryColor}
             />
           ),
           text: 'Water',
         },
         {
-          icon: <EntypoIcon name="light-bulb" size={20} color={Colors.primaryColor} />,
+          icon: <EntypoIcon name="light-bulb" size={30} color={Colors.primaryColor} />,
           text: 'Electricity',
         },
         {
-          icon: <FontAwesome5Icon name="mobile" size={20} color={Colors.primaryColor} />,
+          icon: <FontAwesome5Icon name="mobile" size={30} color={Colors.primaryColor} />,
           text: 'Postpaid',
         },
         {
-          icon: <EntypoIcon name="landline" size={20} color={Colors.primaryColor} />,
+          icon: <EntypoIcon name="landline" size={30} color={Colors.primaryColor} />,
           text: 'Broadband/Landline',
         },
         {
-          icon: <MaterialCommunityIcon name="book-education-outline" size={20} color={Colors.primaryColor} />,
+          icon: <MaterialCommunityIcon name="book-education-outline" size={30} color={Colors.primaryColor} />,
           text: 'Education Fees',
         },
         {
-          icon: <AntDesignIcon name="home" size={20} color={Colors.primaryColor} />,
+          icon: <AntDesignIcon name="home" size={30} color={Colors.primaryColor} />,
           text: 'Rent Payment',
         },
       ],
@@ -120,7 +120,7 @@ export function BillSectionScreen(props) {
                             alignItems: 'center',
                           }}>
                           {item1.item.icon}
-                          <Text style={{color: 'grey', textAlign: 'center'}}>
+                          <Text style={{color: 'grey', textAlign: 'center',fontSize : 12}}>
                             {item1.item.text}
                           </Text>
                         </TouchableOpacity>

@@ -257,13 +257,17 @@ class CardsScreen extends Component {
                         resizeMode='contain'
                     />
                     <Text style={{ ...Fonts.whiteColor16Medium }}>6290 8821 7695 7551</Text>
-                    <Text style={{ ...Fonts.whiteColor14Medium }}>990</Text>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                         <View>
                             <Text style={{ ...Fonts.whiteColor12Medium }}>Card holder</Text>
                             <Text style={{ ...Fonts.whiteColor14Medium, marginTop: Sizes.fixPadding - 8.0 }}>
                                 Munish Mehta
                             </Text>
+                        </View>
+                        <View>
+                            
+                    <Text style={{ ...Fonts.whiteColor14Medium }}>CVV</Text>
+                    <Text style={{ ...Fonts.whiteColor14Medium }}>990</Text>
                         </View>
                         <View style={{ alignItems: 'flex-end' }}>
                             <Text style={{ ...Fonts.whiteColor12Medium }}>
