@@ -144,7 +144,7 @@ class LoanStatementScreen extends Component {
                     </View>
                 </View>
                 <View style={{ alignItems: 'flex-end' }}>
-                    <Text style={{ ...Fonts.blackColor14Medium }}>USD</Text>
+                    <Text style={{ ...Fonts.blackColor14Medium }}>INR</Text>
                     <Text style={{ ...Fonts.blackColor16Bold }}>
                         {item.iscredit ? '+' : '-'}{item.amount}
                     </Text>

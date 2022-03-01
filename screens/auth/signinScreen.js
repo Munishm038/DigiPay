@@ -103,11 +103,18 @@ class SigninScreen extends Component {
         onPress={() => this.props.navigation.navigate('Register')}>
         <Text
           style={{
-            ...Fonts.blackColor16Medium,
+            color: Colors.primaryColor,
+            fontSize: 16,
             textAlign: 'center',
             marginVertical: Sizes.fixPadding * 2.0,
           }}>
-          Not have an account? Create One
+          Not have an account?{' '}
+          <Text
+            style={{
+              fontWeight: '500',
+            }}>
+            Create One
+          </Text>
         </Text>
       </TouchableOpacity>
     );

@@ -4,7 +4,6 @@ import {
   StyleSheet,
   SafeAreaView,
   StatusBar,
-  BackHandler,
   TouchableOpacity,
   Dimensions,
   TextInput,
@@ -12,36 +11,31 @@ import {
 } from 'react-native';
 import {withNavigation} from 'react-navigation';
 import {Colors, Fonts, Sizes} from '../../constant/styles';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import AntDesignIcons from 'react-native-vector-icons/AntDesign';
+import IonIcon from 'react-native-vector-icons/Ionicons';
 import QRCode from 'react-native-qrcode-svg';
 
 import {NativeBaseProvider, Text} from 'native-base';
 
 class RecieveMoneyScreen extends Component {
-  componentDidMount() {
-    BackHandler.addEventListener(
-      'hardwareBackPress',
-      this.handleBackButton.bind(this),
-    );
-  }
-
-  componentWillUnmount() {
-    BackHandler.removeEventListener(
-      'hardwareBackPress',
-      this.handleBackButton.bind(this),
-    );
-  }
-
-  handleBackButton = () => {
-    this.props.navigation.pop();
-    return true;
-  };
-
   render() {
     return (
       <NativeBaseProvider>
-        <View style={{flex: 1, alignItems: 'center', backgroundColor: '#FFF'}}>
+        <View
+          style={{
+            width: '100%',
+            height: 50,
+            backgroundColor: '#FFF',
+            justifyContent: 'center',
+            paddingHorizontal: 10,
+          }}>
+          <TouchableOpacity
+            onPress={() => {
+              this.props.navigation.goBack();
+            }}>
+            <IonIcon name="arrow-back" size={30} color="#0009" />
+          </TouchableOpacity>
+        </View>
+        <View style={{flex: 1, alignItems: 'center',backgroundColor : '#FFF'}}>
           <Text fontSize="4xl" fontWeight="bold" style={{paddingVertical: 20}}>
             Munish Kumar
           </Text>
@@ -52,8 +46,14 @@ class RecieveMoneyScreen extends Component {
             // logoSize={30}
             // logoBackgroundColor="transparent"
           />
-          <Text fontSize="2xl" fontWeight="bold" style={{paddingVertical: 20}}>
+          <Text style={{paddingTop: 20}} fontSize="xl">
+            Mobile Number
+          </Text>
+          <Text fontSize="2xl" fontWeight="bold" style={{}}>
             +91 7015624643
+          </Text>
+          <Text fontSize="2xl" fontWeight="bold" style={{}}>
+            7015624643@digipay
           </Text>
         </View>
       </NativeBaseProvider>

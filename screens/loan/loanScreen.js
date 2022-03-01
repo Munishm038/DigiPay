@@ -16,10 +16,17 @@ import {
 import {withNavigation} from 'react-navigation';
 import {Colors, Fonts, Sizes} from '../../constant/styles';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import {CustomAlertDialog} from '../../component/CustomAlertDialog';
 
 const {width} = Dimensions.get('screen');
 
 class LoanScreen extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false,
+    };
+  }
   componentDidMount() {
     BackHandler.addEventListener(
       'hardwareBackPress',
@@ -39,6 +46,12 @@ class LoanScreen extends Component {
     return true;
   };
 
+  updateDialogState = resp => {
+    this.setState({
+      isOpen: resp,
+    });
+  };
+
   render() {
     return (
       <SafeAreaView style={{flex: 1, backgroundColor: '#F2F4F6'}}>
@@ -46,6 +59,10 @@ class LoanScreen extends Component {
         <View style={{flex: 1}}>
           {this.header()}
           <ScrollView showsVerticalScrollIndicator={false}>
+            <CustomAlertDialog
+              isOpen={this.state.isOpen}
+              setIsOpen={this.updateDialogState}
+            />
             <View
               style={{
                 backgroundColor: Colors.primaryColor,
@@ -84,11 +101,15 @@ class LoanScreen extends Component {
                 margin: 5,
                 paddingHorizontal: 10,
                 borderRadius: 5,
+                color: 'black',
               }}
-              placeholder="Loan Amount"
+              placeholder="Required Loan Amount"
               placeholderTextColor="grey"
             />
             <TouchableOpacity
+              onPress={() => {
+                this.updateDialogState(true);
+              }}
               style={{
                 backgroundColor: Colors.primaryColor,
                 margin: 5,
@@ -108,16 +129,16 @@ class LoanScreen extends Component {
               Active Loans
             </Text>
             {this.card({
-              loanType: 'Home Loan',
+              loanType: 'Two Wheeler Loan',
               accountNumber: '1356 8795 7857 9856',
-              dueAmount: '69,000,00.00',
-              emiAmount: '25,000.00',
+              dueAmount: '25,000.00',
+              emiAmount: '3,500.00',
             })}
             {this.card({
-              loanType: 'Car Loan',
+              loanType: 'Personal Loan',
               accountNumber: '1658 9875 1245 9534',
-              dueAmount: '4,500,00.00',
-              emiAmount: '12,000',
+              dueAmount: '15,000.00',
+              emiAmount: '2,500.00',
             })}
             {this.availableOffersText()}
             {this.businessLoanInfo()}

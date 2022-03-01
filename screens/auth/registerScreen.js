@@ -84,7 +84,8 @@ class RegisterScreen extends Component {
         }}>
         <Text
           style={{
-            ...Fonts.blackColor16Medium,
+            fontSize: 16,
+            color: Colors.primaryColor,
             textAlign: 'center',
             marginVertical: Sizes.fixPadding * 2.0,
           }}>

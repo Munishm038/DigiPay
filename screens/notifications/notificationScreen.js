@@ -27,6 +27,21 @@ const notificationList = [
     name: 'Use your card & get upto 20% cashback',
     description: 'Use your BankX card to any store and get upto 20% cashback.',
   },
+  {
+    key: '3',
+    name: 'Payment Paid',
+    description: 'SWIGGY',
+  },
+  {
+    key: '4',
+    name: 'Payment Recieved',
+    description: 'Ankit Sharma',
+  },
+  {
+    key: '5',
+    name: 'Cashback Credited',
+    description: 'Cashback credited to your account',
+  },
 ];
 
 class NotificationScreen extends Component {

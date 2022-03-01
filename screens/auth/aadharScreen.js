@@ -52,6 +52,7 @@ class AadharScreen extends Component {
           <ScrollView showsVerticalScrollIndicator={false}>
             {this.aadharText()}
             {this.aadharFields()}
+            {this.captureImage()}
             {this.continueButton()}
           </ScrollView>
         </View>
@@ -86,8 +87,8 @@ class AadharScreen extends Component {
         <View style={styles.textFieldContainerStyle}>
           <TextInput
             maxLength={4}
-            placeholder='XXXX'
-            placeholderTextColor='grey'
+            placeholder="XXXX"
+            placeholderTextColor="grey"
             style={{...Fonts.blackColor16Bold}}
             onChangeText={val => {
               if (val.length === 4) {
@@ -105,8 +106,8 @@ class AadharScreen extends Component {
               this.secondTextInput = input;
             }}
             maxLength={4}
-            placeholder='XXXX'
-            placeholderTextColor='grey'
+            placeholder="XXXX"
+            placeholderTextColor="grey"
             keyboardType="numeric"
             onChangeText={val => {
               if (val.length === 4) {
@@ -123,9 +124,8 @@ class AadharScreen extends Component {
             ref={input => {
               this.thirdTextInput = input;
             }}
-            placeholder='XXXX'
-            placeholderTextColor='grey'
-
+            placeholder="XXXX"
+            placeholderTextColor="grey"
             maxLength={4}
             onChangeText={val => {
               if (val.length === 4) {
@@ -139,6 +139,28 @@ class AadharScreen extends Component {
           />
         </View>
       </View>
+    );
+  }
+
+  captureImage() {
+    return (
+      <TouchableOpacity
+        onPress={() => {
+          this.props.navigation.navigate('CameraScreen')
+        }}
+        style={{
+          borderWidth: 1,
+          borderColor: Colors.primaryColor,
+          width: '90%',
+          alignSelf: 'center',
+          padding: 7,
+          marginBottom: 20,
+          borderRadius: 5,
+        }}>
+        <Text style={{textAlign: 'center', color: Colors.primaryColor}}>
+          Capture Image
+        </Text>
+      </TouchableOpacity>
     );
   }
 
@@ -210,8 +232,8 @@ const styles = StyleSheet.create({
   },
   textFieldContainerStyle: {
     height: 60.0,
-    flex : 1,
-    marginHorizontal : 5,
+    flex: 1,
+    marginHorizontal: 5,
     elevation: 3.0,
     paddingLeft: Sizes.fixPadding,
     borderRadius: Sizes.fixPadding,

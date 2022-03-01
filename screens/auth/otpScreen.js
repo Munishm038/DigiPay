@@ -92,13 +92,16 @@ class OtpScreen extends Component {
         <Text style={{...Fonts.grayColor14Medium}}>
           Didn’t receive otp code!
         </Text>
-        <Text
-          style={{
-            ...Fonts.blackColor18Bold,
-            marginLeft: Sizes.fixPadding - 5.0,
-          }}>
-          Resend
-        </Text>
+        <TouchableOpacity onPress={() => {}}>
+          <Text
+            style={{
+              ...Fonts.blackColor18Bold,
+              marginLeft: Sizes.fixPadding - 5.0,
+              color: Colors.primaryColor,
+            }}>
+            Resend
+          </Text>
+        </TouchableOpacity>
       </View>
     );
   }

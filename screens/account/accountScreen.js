@@ -29,7 +29,9 @@ class AccountScreen extends Component {
           <TouchableOpacity>
             {this.settingInfo({title: 'Change Password'})}
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={()=>{
+            this.props.navigation.navigate('BankAccountDetail')
+          }}>
             {this.settingInfo({title: 'Bank Account Details'})}
           </TouchableOpacity>
           <TouchableOpacity

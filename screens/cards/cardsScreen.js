@@ -252,10 +252,12 @@ class CardsScreen extends Component {
                 </Text>
                 <View style={styles.userCardContentStyle}>
                     <Image
-                        source={require('../../assets/images/card/visa.png')}
-                        style={{ height: 21.0, width: 64.0, alignSelf: 'flex-end' }}
+                        source={require('../../assets/images/logo.png')}
+                        style={{ height: 40.0, width: 64.0, alignSelf: 'flex-end' }}
+                        resizeMode='contain'
                     />
                     <Text style={{ ...Fonts.whiteColor16Medium }}>6290 8821 7695 7551</Text>
+                    <Text style={{ ...Fonts.whiteColor14Medium }}>990</Text>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                         <View>
                             <Text style={{ ...Fonts.whiteColor12Medium }}>Card holder</Text>
@@ -303,7 +305,7 @@ const styles = StyleSheet.create({
     },
     userCardContentStyle: {
         height: 170.0,
-        backgroundColor: Colors.primaryColor,
+        backgroundColor: Colors.blackColor,
         borderRadius: Sizes.fixPadding - 3.0,
         marginHorizontal: Sizes.fixPadding * 2.0,
         justifyContent: 'space-between',

@@ -22,10 +22,10 @@ class EditProfileScreen extends Component {
     };
 
     state = {
-        name: 'Ellison Perry',
-        email: 'ellison@test.com',
+        name: 'Munish Mehta',
+        email: 'munish123@gmail.com',
         password: '123456',
-        phoneNumber: '123456789',
+        phoneNumber: '7015624643',
         showBottomSheet: false,
     }
 
@@ -179,7 +179,8 @@ class EditProfileScreen extends Component {
                 marginBottom: Sizes.fixPadding + 5.0
             }}>
                 <Image
-                    source={require('../../assets/images/user/user_9.jpg')}
+                    source={require('../../assets/images/user/user_1.jpg')}
+
                     style={{ height: 110.0, width: 110.0, borderRadius: 52.5, }}
                     resizeMode="cover"
                 />

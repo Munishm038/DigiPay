@@ -28,20 +28,59 @@ import otpScreen from './screens/auth/otpScreen';
 import splashScreen from './screens/splashScreen';
 import aadharScreen from './screens/auth/aadharScreen';
 import RecieveMoneyScreen from './screens/RecieveMoney/RecieveMoneyScreen';
+import {CameraScreen} from './screens/auth/cameraScreen';
+import {Colors} from './constant/styles';
+import {BankAccountDetailScreen} from './screens/account/BankAccountDetailScreen';
+import {LinkBankAccountScreen} from './screens/account/LinkBankAccountScreen';
+import { BillSectionScreen } from './screens/Bills/BillSection';
 
 const switchNavigator = createStackNavigator(
   {
     Splash: splashScreen,
     Signin: signinScreen,
     Register: registerScreen,
+    CameraScreen: {
+      screen: CameraScreen,
+      navigationOptions: {
+        title: 'Capture Aadhar',
+        headerStyle: {
+          backgroundColor: Colors.primaryColor,
+        },
+        headerTintColor: '#FFF',
+      },
+    },
     Otp: otpScreen,
     aadhar: aadharScreen,
     BottomTabBar: bottomTabBarScreen,
     Transaction: transactionScreen,
     FundTransfer: fundTransferScreen,
-    RecieveMoney: RecieveMoneyScreen,
+    RecieveMoney: {
+      screen: RecieveMoneyScreen,
+      navigationOptions: {
+        title: 'Recieve Money',
+        headerShown: true,
+      },
+    },
     OneTimeTrasfer: oneTimeTransferScreen,
     OneTimeTransferWithAccount: oneTimeTrasferWithAccountScreen,
+    BankAccountDetail: {
+      screen: BankAccountDetailScreen,
+      navigationOptions: {
+        title: 'Account Details',
+      },
+    },
+    LinkBankAccount: {
+      screen: LinkBankAccountScreen,
+      navigationOptions: {
+        title: 'Link Bank Account',
+      },
+    },
+    BillSection: {
+      screen: BillSectionScreen,
+      navigationOptions: {
+        title: 'Pay your Bills',
+      },
+    },
     TransferSuccessfull: transferSuccessfullScreen,
     Benificiaries: beneficiariesScreen,
     AddNewBenificiary: addNewBenificiaryScreen,

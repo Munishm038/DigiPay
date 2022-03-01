@@ -114,7 +114,7 @@ class BankingScreen extends Component {
           </TouchableOpacity>
           <TouchableOpacity
             activeOpacity={0.9}
-            onPress={() => this.props.navigation.navigate('Loan')}>
+            onPress={() => this.props.navigation.navigate('BillSection')}>
             {this.functionality({
               title: 'Pay your bills',
               icon: (
@@ -128,7 +128,7 @@ class BankingScreen extends Component {
           </TouchableOpacity>
           <TouchableOpacity
             activeOpacity={0.9}
-            onPress={() => this.props.navigation.navigate('Loan')}>
+            onPress={() => this.props.navigation.navigate('LinkBankAccount')}>
             {this.functionality({
               title: 'Link your bank account',
               icon: (
